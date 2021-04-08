@@ -1,8 +1,13 @@
 class Brave
 
-   # nameのセッター
-   def name=(name)
+  # nameのセッター
+  def name=(name)
     @name = name
+  end
+
+  # nameのゲッター
+  def name
+    @name
   end
 
   # hpのセッター
@@ -10,14 +15,29 @@ class Brave
     @hp = hp
   end
 
+  # hpのゲッター
+  def hp
+    @hp
+  end
+
   # offenseのセッター
   def offense=(offense)
     @offense = offense
   end
 
+  # offenseのゲッター
+  def offense
+    @offense
+  end
+
   # defenseのセッター
   def defense=(defense)
     @defense = defense
+  end
+
+  # defenseのゲッター
+  def defense
+    @defense
   end
 
   brave = Brave.new
