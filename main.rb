@@ -47,4 +47,9 @@ class Brave
   brave.offense = 150
   brave.defense = 100
 
+  brave.name
+  brave.hp
+  brave.offense
+  brave.defense
+
 end
