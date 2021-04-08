@@ -20,4 +20,11 @@ class Brave
     @defense = defense
   end
 
+  brave = Brave.new
+
+  brave.name = "テリー"
+  brave.hp = 500
+  brave.offense = 150
+  brave.defense = 100
+
 end
