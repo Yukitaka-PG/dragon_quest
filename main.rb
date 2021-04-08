@@ -52,4 +52,11 @@ class Brave
   brave.offense
   brave.defense
 
+  puts <<~TEXT
+  NAME:#{brave.name}
+  HP:#{brave.hp}
+  OFFENSE:#{brave.offense}
+  DEFENSE:#{brave.defense}
+  TEXT
+
 end
