@@ -1,8 +1,11 @@
 class Brave
 
-  # nameのセッター
-  def name=(name)
+  # new演算子から渡された引数を受け取る
+  def initialize(name,hp,offense,defense)
     @name = name
+    @hp = hp
+    @offense = offense
+    @defense = deffense
   end
 
   # nameのゲッター
@@ -10,19 +13,9 @@ class Brave
     @name
   end
 
-  # hpのセッター
-  def hp=(hp)
-    @hp = hp
-  end
-
   # hpのゲッター
   def hp
     @hp
-  end
-
-  # offenseのセッター
-  def offense=(offense)
-    @offense = offense
   end
 
   # offenseのゲッター
@@ -30,27 +23,14 @@ class Brave
     @offense
   end
 
-  # defenseのセッター
-  def defense=(defense)
-    @defense = defense
-  end
-
   # defenseのゲッター
   def defense
     @defense
   end
 
-  brave = Brave.new
+end
 
-  brave.name = "テリー"
-  brave.hp = 500
-  brave.offense = 150
-  brave.defense = 100
-
-  brave.name
-  brave.hp
-  brave.offense
-  brave.defense
+  brave = Brave.new("テリー",500,150,100)
 
   puts <<~TEXT
   NAME:#{brave.name}
@@ -58,5 +38,3 @@ class Brave
   OFFENSE:#{brave.offense}
   DEFENSE:#{brave.defense}
   TEXT
-
-end
