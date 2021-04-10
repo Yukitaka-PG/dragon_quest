@@ -40,9 +40,10 @@ end
 
 class Monster
   
-  attr_reader :name, :offense, :defense
-  attr_accessor :hp
+  attr_reader :offense, :defense
+  attr_accessor :name, :hp
 
+  POWER_UP_RATE = 1.5
   CALC_HALF_HP = 0.5
 
   def initialize(**params)
@@ -72,11 +73,21 @@ class Monster
     puts "#{brave.name}の残りHPは#{brave.hp}だ"
 
   end
-  
+
 
   private
 
   def transform
+   
+    transform_name = "ドラゴン"
+
+    puts <<~EOS
+    "#{@name}は怒っている"
+    "#{@name}は#{transform_name}に変身した"
+    EOS
+
+    @offense *= POWER_UP_RATE
+    @name = transform_name
     
   end
 
