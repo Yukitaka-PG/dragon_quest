@@ -3,6 +3,8 @@ class Brave
   attr_reader :name, :offense, :defense
   attr_accessor :hp
 
+  SPECIAL_ATTACK_CONSTANT = 1.5
+
   def initialize(**params)
     @name = params[:name]
     @hp = params[:hp]
@@ -31,7 +33,7 @@ class Brave
   end
 
   def calculate_special_attack
-    @offense*1.5
+    @offense*SPECIAL_ATTACK_CONSTANT
   end
 
 end
