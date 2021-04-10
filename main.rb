@@ -11,7 +11,25 @@ class Brave
   end
 
   def attack(monster)
-    puts "テスト：#{monster.name}のHPを表示 -> #{monster.hp}"
+    puts "#{@name}の攻撃"
+
+    attack_num = rand(4)
+
+    if attack_num == 0
+      damage = calculate_special_attack
+    else
+      damage = @offense - monster.defense
+    end
+
+    monster.hp -= damage
+
+    puts "#{monster.name}は#{damage}を受けた"
+    puts "#{monster.name}の残りHPは#{monster.hp}だ"
+
+  end
+
+  def calculate_special_attack
+    puts "calculate_special_attackを呼び出した。"
   end
 
 end
