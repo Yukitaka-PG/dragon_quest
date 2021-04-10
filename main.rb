@@ -16,8 +16,10 @@ class Brave
     attack_num = rand(4)
 
     if attack_num == 0
-      damage = calculate_special_attack
+      puts "必殺攻撃"
+      damage = calculate_special_attack - monster.defense
     else
+      puts "通常攻撃"
       damage = @offense - monster.defense
     end
 
@@ -29,7 +31,7 @@ class Brave
   end
 
   def calculate_special_attack
-    puts "calculate_special_attackを呼び出した。"
+    @offense*1.5
   end
 
 end
