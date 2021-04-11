@@ -19,9 +19,8 @@ class Brave
 
     damage = calculate_damage(monster,attack_type)
 
-    monster.hp -= damage
+    cause_damage(monster,damage)
 
-    puts "#{monster.name}は#{damage}を受けた"
     puts "#{monster.name}の残りHPは#{monster.hp}だ"
 
   end
@@ -44,6 +43,11 @@ class Brave
       puts "通常攻撃"
       damage = @offense - monster.defense
     end
+  end
+
+  def cause_damage(monster,damage)
+    monster.hp -= damage
+    puts "#{monster.name}は#{damage}のダメージを受けた"
   end
 
   def calculate_special_attack
