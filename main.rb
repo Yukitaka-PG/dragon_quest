@@ -15,9 +15,9 @@ class Brave
   def attack(monster)
     puts "#{@name}の攻撃"
 
-    attack_num = rand(4)
+    attack_type = decision_attack_type
 
-    if attack_num == 0
+    if attack_type == "special_attack"
       puts "必殺攻撃"
       damage = calculate_special_attack - monster.defense
     else
@@ -30,6 +30,16 @@ class Brave
     puts "#{monster.name}は#{damage}を受けた"
     puts "#{monster.name}の残りHPは#{monster.hp}だ"
 
+  end
+
+  def decision_attack_type
+    attack_num = rand(4)
+    
+    if attack_num == 0
+      "special_attack"
+    else
+      "normal_attack"
+    end
   end
 
   def calculate_special_attack
