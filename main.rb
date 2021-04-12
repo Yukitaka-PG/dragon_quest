@@ -91,7 +91,7 @@ class Monster
 
     puts "#{@name}の攻撃"
 
-    damage = @offense - brave.defense
+    damage = calculate_damage(brave)
 
     brave.hp -= damage
 
@@ -102,6 +102,10 @@ class Monster
 
 
   private
+
+  def calculate_damage(target)
+    @offense - target.defense
+  end
 
   def transform
    
