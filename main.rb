@@ -2,7 +2,7 @@ class Character
   attr_reader :offense, :defense
   attr_accessor :hp, :name
 
-  def intialize(**params)
+  def initialize(**params)
     @name = params[:name]
     @hp = params[:hp]
     @offense = params[:offense]
@@ -74,10 +74,10 @@ class Monster < Character
 
   def initialize(**params)
     super(
-      name:params[:name]
-      hp:params[:hp]
-      offense:params[:offense]
-      defense:params[:defense]
+      name: params[:name],
+      hp: params[:hp],
+      offense: params[:offense],
+      defense: params[:defense]
     )
 
     @transform_flag = false
