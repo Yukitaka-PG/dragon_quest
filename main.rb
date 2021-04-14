@@ -1,16 +1,18 @@
-class Brave
+class Character
+  attr_reader :offense, :defense
+  attr_accessor :hp, :name
 
-  attr_reader :name, :offense, :defense
-  attr_accessor :hp
-
-  SPECIAL_ATTACK_CONSTANT = 1.5
-
-  def initialize(**params)
+  def intialize(**params)
     @name = params[:name]
     @hp = params[:hp]
     @offense = params[:offense]
     @defense = params[:defense]
   end
+end
+
+class Brave < Character
+
+  SPECIAL_ATTACK_CONSTANT = 1.5
 
   def attack(monster)
     puts "#{@name}の攻撃"
@@ -65,19 +67,18 @@ class Brave
 
 end
 
-class Monster
-  
-  attr_reader :offense, :defense
-  attr_accessor :name, :hp
+class Monster < Character
 
   POWER_UP_RATE = 1.5
   CALC_HALF_HP = 0.5
 
   def initialize(**params)
-    @name = params[:name]
-    @hp = params[:hp]
-    @offense = params[:offense]
-    @defense = params[:defense]
+    super(
+      name:params[:name]
+      hp:params[:hp]
+      offense:params[:offense]
+      defense:params[:defense]
+    )
 
     @transform_flag = false
     @trigger_of_transform = params[:hp]*CALC_HALF_HP
