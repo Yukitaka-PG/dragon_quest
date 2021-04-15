@@ -5,12 +5,15 @@ require './monster'
   brave = Brave.new(name:"テリー",hp:500,offense:250,defense:150)
   monster = Monster.new(name:"スライム",hp:250,offense:200,defense:100)
 
+  EXP_CONSTANT = 2
+  GOLD_CONSTANT = 3
+
 loop do
   brave.attack(monster)
 
   if monster.hp <= 0
-    exp = (monster.offense + monster.defense) * 2
-    gold = (monster.offense + monster.defense) * 3
+    exp = (monster.offense + monster.defense) * EXP_CONSTANT
+    gold = (monster.offense + monster.defense) * GOLD_CONSTANT
     puts "#{brave.name}は戦いに勝った"
     puts "#{exp}の経験値と#{gold}ゴールドを獲得した"
     break
