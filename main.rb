@@ -1,29 +1,10 @@
-require './character'
 require './brave'
 require './monster'
+require './games_controller'
 
-  brave = Brave.new(name:"テリー",hp:500,offense:250,defense:150)
-  monster = Monster.new(name:"スライム",hp:250,offense:200,defense:100)
+games_controller = GamesController.new
 
-  EXP_CONSTANT = 2
-  GOLD_CONSTANT = 3
+terry = Brave.new(name: "テリー", hp: 500, offense: 150, defense: 100)
+slime = Monster.new(name: "スライム", hp: 250, offense: 200, defense: 100)
 
-loop do
-  brave.attack(monster)
-
-  if monster.hp <= 0
-    exp = (monster.offense + monster.defense) * EXP_CONSTANT
-    gold = (monster.offense + monster.defense) * GOLD_CONSTANT
-    puts "#{brave.name}は戦いに勝った"
-    puts "#{exp}の経験値と#{gold}ゴールドを獲得した"
-    break
-  end
-
-  monster.attack(brave)
-
-  if brave.hp <= 0
-    puts "#{brave.name}は戦いに負けた"
-    puts "目の前が真っ暗になった。"
-    break
-  end
-end
+games_controller.battle(brave: terry, monster: slime)
