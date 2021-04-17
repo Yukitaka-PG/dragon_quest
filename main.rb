@@ -1,3 +1,4 @@
+require './character'
 require './brave'
 require './monster'
 require './games_controller'
