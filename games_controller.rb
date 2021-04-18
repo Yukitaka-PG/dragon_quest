@@ -5,8 +5,8 @@ class GamesController
 
   # バトルの処理
   def battle(**params)
-    brave = params[:brave]
-    monster = params[:monster]
+    
+    battle_characters(params)
 
     loop do
       brave.attack(monster)
@@ -26,25 +26,29 @@ class GamesController
     end
   end
 
-  # 以下のメソッドはクラス外から呼び出す必要がないのでprivate以下に記述する
   private
 
-    # バトル終了の判定
-    def battle_end?(character)
-      character.hp <= 0
-    end
+  def battle_characters
+    brave = params[:brave]
+    monster = params[:monster]
+  end
+  
+  # バトル終了の判定
+  def battle_end?(character)
+    character.hp <= 0
+  end
 
-    # 勇者の勝利判定
-    def battle_result(brave)
-      brave.hp > 0
-    end
+  # 勇者の勝利判定
+  def battle_result(brave)
+    brave.hp > 0
+  end
 
-    # 経験値とゴールドの計算
-    def calculate_of_exp_and_gold(monster)
-      exp = (monster.offense + monster.defense) * EXP_CONSTANT
-      gold = (monster.offense + monster.defense) * GOLD_CONSTANT
-      result = {exp: exp, gold: gold}
+  # 経験値とゴールドの計算
+  def calculate_of_exp_and_gold(monster)
+    exp = (monster.offense + monster.defense) * EXP_CONSTANT
+    gold = (monster.offense + monster.defense) * GOLD_CONSTANT
+    result = {exp: exp, gold: gold}
 
-      result
-    end
+    result
+  end
 end
