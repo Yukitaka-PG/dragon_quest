@@ -3,15 +3,10 @@ class Brave < Character
   SPECIAL_ATTACK_CONSTANT = 1.5
 
   def attack(monster)
-    # puts "#{@name}の攻撃"
-
     attack_type = decision_attack_type
-
     damage = calculate_damage(target: monster, attack_type: attack_type)
-
     cause_damage(target:monster, damage:damage)
-
-    attack_message
+    attack_message(attack_type: attack_type)
 
     # puts "#{monster.name}の残りHPは#{monster.hp}だ"
 
