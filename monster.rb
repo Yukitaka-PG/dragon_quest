@@ -30,6 +30,7 @@ class Monster < Character
 
     attack_message
 
+    damage_message(target:brave, damage:damage)
     # puts "#{brave.name}の残りHPは#{brave.hp}だ"
 
   end
