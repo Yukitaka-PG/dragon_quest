@@ -38,7 +38,6 @@ class GamesController
     def battle_judgment
       result = calculate_of_exp_and_gold
 
-      # end_messageを呼び出す
       end_message(result)
     end
 
