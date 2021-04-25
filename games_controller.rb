@@ -1,7 +1,7 @@
 require './message_dialog'
 
 class GamesController
-  # MessageDialogモジュールのinclude
+  
   include MessageDialog
 
   EXP_CONSTANT = 2

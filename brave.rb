@@ -8,7 +8,6 @@ class Brave < Character
     cause_damage(target:monster, damage:damage)
     attack_message(attack_type: attack_type)
     damage_message(target:monster, damage:damage)
-    # puts "#{monster.name}の残りHPは#{monster.hp}だ"
 
   end
 
@@ -43,7 +42,6 @@ class Brave < Character
 
     target.hp -= damage
     target.hp = 0 if target.hp < 0
-    # puts "#{target.name}は#{damage}のダメージを受けた"
   end
 
   def calculate_special_attack
